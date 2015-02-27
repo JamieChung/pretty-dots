@@ -29,17 +29,16 @@ $(function() {
 	}
 	requestAnimationFrame(draw);
 	setaccentcolor();
-	$('a').smoothScroll();
 });
 
 function canvassetup() {
-	
+
 	WIDTH = window.innerWidth;
     HEIGHT = window.innerHeight;
-	
+
 	canvas = document.getElementById('dots');
 	canvas.width = WIDTH;
-	
+
 	if(HEIGHT < 400) {
 		canvas.height = 400;
 	}
@@ -56,24 +55,6 @@ function setaccentcolor() {
 	var colorblocks = ['red', 'orange', 'yellow', 'green', 'blue'];
 
 	accentColor = colorblocks[Math.floor(Math.random() * colorblocks.length)];
-}
-
-function addaccentcolor() {
-	
-	document.getElementById('name').className += ' ' + accentColor + '-font';
-	
-	for ( i = 0; i < document.getElementsByClassName('break').length; i++) {
-		document.getElementsByClassName('break')[i].className += ' ' + accentColor;
-	}
-	
-	for ( j = 0; j < document.getElementsByClassName('special').length; j++) {
-		document.getElementsByClassName('special')[j].className += ' ' + accentColor + '-font';
-	}
-	
-	for ( k = 0; k < document.getElementsByTagName('a').length - 5; k++) {
-		document.getElementsByTagName('a')[k + 5].className += ' ' + accentColor + '-font';
-		// added the +5 to not affect the <nav>... kinda hacky
-	}
 }
 
 function cmousedown(e) {
